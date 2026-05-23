@@ -2,98 +2,310 @@
 
 *{
     margin:0;
-    padding: 0;
-    box-sizing: border-box;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
     font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
     background-color: rgb(249, 234, 164);
 }
 
 body{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    min-height:100vh;
+}
+
+/* ---------------- INPUT SCREEN ---------------- */
+
+.taking_input{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
 }
 
 header{
-
-    background-color: black;
+    background-color:black;
     color:beige;
-    text-align: center;
-    padding: 1rem;
+    text-align:center;
+    padding:1rem;
     font-size:x-large;
 }
 
-h2{
-    background-color: rgb(150, 149, 163);
-    padding: 1rem;
-    text-align: center;
+.form_heading{
+    background-color:rgb(150, 149, 163);
+    padding:1rem;
+    text-align:center;
+    font-size:1.3rem;
 }
 
 form{
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:1rem;
 }
 
 .inner_form{
-    border: 5px double black;
-    border-radius: 2rem;
-    padding: 2rem;
-    font-size: 1.5em;
-    -webkit-border-radius: 2rem;
-    -moz-border-radius: 2rem;
-    -ms-border-radius: 2rem;
-    -o-border-radius: 2rem;
+    border:5px double black;
+    border-radius:2rem;
+    padding:2rem;
+    width:100%;
+    max-width:600px;
+    background-color:rgba(255,255,255,0.4);
 }
 
 .select_outer{
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.5em;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    font-size:1.5rem;
+}
+
+.select_outer label{
+    font-weight:bold;
 }
 
 #topic_select{
-    flex: 1;
-    margin-left:15px;
-    text-align: center;
-    font-size: 1.5rem;
-    border-radius: 2rem;
-    -webkit-border-radius: 2rem;
-    -moz-border-radius: 2rem;
-    -ms-border-radius: 2rem;
-    -o-border-radius: 2rem;
+    flex:1;
+    text-align:center;
+    font-size:1.2rem;
+    padding:10px;
+    border-radius:2rem;
+    border:2px solid black;
 }
 
 .number_of_ques_para{
-    font-size: 2rem;
-    margin-top: 1rem;
+    display:block;
+    font-size:1.5rem;
+    margin-top:1.5rem;
+    margin-bottom:10px;
+    font-weight:bold;
 }
 
-.number_of_ques , .submit_form{
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border-radius: 2rem;
-    -webkit-border-radius: 2rem;
-    -moz-border-radius: 2rem;
-    -ms-border-radius: 2rem;
-    -o-border-radius: 2rem;
+.number_of_ques,
+.submit_form{
+    display:block;
+    width:100%;
+    padding:12px;
+    border-radius:2rem;
+    border:none;
+    font-size:1.2rem;
 }
 
 .number_of_ques{
-    margin-bottom: 1rem;
+    margin-bottom:1rem;
+    border:2px solid black;
 }
 
 .submit_form{
-    color: aliceblue;
-    background-color: rgb(136, 136, 224);
-    font-size: x-large;
-
+    color:white;
+    background-color:rgb(136, 136, 224);
+    font-size:1.3rem;
+    cursor:pointer;
+    transition:0.3s;
 }
 
+.submit_form:hover{
+    transform:scale(1.03);
+}
+
+/* ---------------- FLASHCARD SCREEN ---------------- */
+
+.cards{
+    min-height:100vh;
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:2rem;
+}
+
+.card_heading{
+    font-size:2rem;
+    margin-bottom:2rem;
+    text-align:center;
+}
+
+/* Card flip container */
+
+.card_container{
+    width:100%;
+    max-width:600px;
+}
+
+.card{
+    width:100%;
+    min-height:320px;
+    position:relative;
+    transform-style:preserve-3d;
+    transition:transform 0.8s;
+    cursor:pointer;
+}
+
+/* Flip class for JS */
+
+.card.flip{
+    transform:rotateY(180deg);
+}
+
+.front,
+.back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border:4px double black;
+    border-radius:2rem;
+    padding:2rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-size:2rem;
+    background-color:white;
+    backface-visibility:hidden;
+}
+
+.back{
+    transform:rotateY(180deg);
+    background-color:rgb(220, 247, 221);
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+.buttons{
+    margin-top:2rem;
+    display:flex;
+    gap:15px;
+}
+
+.btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:2rem;
+    font-size:1.2rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.correct_btn{
+    background-color:rgb(138, 249, 151);
+}
+
+.wrong_btn{
+    background-color:rgb(242, 122, 122);
+}
+
+/* ---------------- RESULT SCREEN ---------------- */
+
+.result_screen{
+    display:none;
+    min-height:100vh;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:2rem;
+}
+
+.result_screen h2{
+    font-size:3rem;
+    margin-bottom:1rem;
+}
+
+.result_screen p{
+    font-size:2rem;
+    margin-bottom:2rem;
+}
+
+.restart_btn{
+    padding:15px 30px;
+    border:none;
+    border-radius:2rem;
+    background-color:rgb(136,136,224);
+    color:white;
+    font-size:1.2rem;
+    cursor:pointer;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media(max-width:768px){
+
+    header{
+        font-size:1.3rem;
+    }
+
+    .form_heading{
+        font-size:1rem;
+    }
+
+    .inner_form{
+        padding:1.5rem;
+    }
+
+    .select_outer{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    #topic_select{
+        width:100%;
+    }
+
+    .number_of_ques_para{
+        font-size:1.2rem;
+    }
+
+    .card_heading{
+        font-size:1.5rem;
+    }
+
+    .card{
+        min-height:250px;
+    }
+
+    .front,
+    .back{
+        font-size:1.4rem;
+        padding:1rem;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .result_screen h2{
+        font-size:2rem;
+    }
+
+    .result_screen p{
+        font-size:1.5rem;
+    }
+}
+
+@media(max-width:480px){
+
+    .inner_form{
+        border-width:3px;
+        padding:1rem;
+    }
+
+    .front,
+    .back{
+        font-size:1.2rem;
+    }
+
+    .submit_form{
+        font-size:1rem;
+    }
+}
