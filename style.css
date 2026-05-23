@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: rgb(249, 234, 164);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header{
+
+    background-color: black;
+    color:beige;
+    text-align: center;
+    padding: 1rem;
+    font-size:x-large;
+}
+
+h2{
+    background-color: rgb(150, 149, 163);
+    padding: 1rem;
+    text-align: center;
+}
+
+form{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner_form{
+    border: 5px double black;
+    border-radius: 2rem;
+    padding: 2rem;
+    font-size: 1.5em;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+}
+
+.select_outer{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+}
+
+#topic_select{
+    flex: 1;
+    margin-left:15px;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+}
+
+.number_of_ques_para{
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.number_of_ques , .submit_form{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+}
+
+.number_of_ques{
+    margin-bottom: 1rem;
+}
+
+.submit_form{
+    color: aliceblue;
+    background-color: rgb(136, 136, 224);
+    font-size: x-large;
+
+}
+

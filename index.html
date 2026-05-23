@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlashCard Page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <header>
+        <h1>FlashCard Learning</h1>
+    </header>
+
+    <h2>Welcome to FlashCard learning app, select topic and number of Question to proceed further</h2>
+
+    <form>
+       <div class="inner_form">
+       <div class="select_outer">
+            <p>Select Topic : </p>
+            <select name="topics" id="topic_select">
+                <option value="HTML">HTML</option>
+                <option value="HTML">CSS</option>
+                <option value="HTML">JS</option>
+            </select>
+       </div>
+        <p class="number_of_ques_para">Enter the number of Question : </p>
+        <input type="number" placeholder="123" min="1" max="3" class="number_of_ques">
+
+        <input type="submit" value="Generate Questions" class="submit_form">
+       </div>
+    </form>
     
 </body>
 </html>
